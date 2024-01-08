@@ -5,12 +5,20 @@ export const GIfExpertApp = () => {
 
   const [categorie, setCategorie] = useState(['Goku']);
 
+  const onAddCategory = (val) => {
+    console.log(val);
+    setCategorie(c => [...c, val])
+  }
 
   return (
     <>
       <h1>GIfExpertApp</h1>
+
+      <AddCategory onAddCategory={onAddCategory} />
+
+
       <ul>{categorie.map(cat => (
-        <AddCategory key={cat} category={categorie} />
+        <li key={cat}>{cat} </li>
       ))}</ul>
     </>
   )

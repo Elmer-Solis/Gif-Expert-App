@@ -1,19 +1,29 @@
 import { useState } from "react"
 
-export const AddCategory = ({ category }) => {
+export const AddCategory = ({ onAddCategory }) => {
 
-    const [images, setImages] = useState('')
+    const [inputValue, setInputValue] = useState('')
 
-    const AddOnChange = ({ target }) => {
-        setImages(target.value)
+    const OnInputChange = ({ target }) => {
+        setInputValue(target.value)
+    }
+
+    const OnSubmit = (event) => {
+        event.preventDefault();
+
+        if (inputValue.trim().length <= 1) return
+
+        onAddCategory(inputValue.trim())
     }
 
     return (<>
-        <input type="text"
-            value={images}
-            onChange={AddOnChange}
-            placeholder="Ingresa un Name"
-        />
+        <form onSubmit={OnSubmit} >
+            <input type="text"
+                value={inputValue}
+                onChange={OnInputChange}
+                placeholder="Ingresa un Name"
+            />
+        </form>
     </>
     )
 }
