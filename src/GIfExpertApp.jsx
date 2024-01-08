@@ -8,7 +8,7 @@ export const GIfExpertApp = () => {
 
   const onAddCategory = (val) => {
     console.log(val);
-    setCategorie(c => [...c, val])
+    setCategorie(c => [val, ...c])
   }
 
   return (
