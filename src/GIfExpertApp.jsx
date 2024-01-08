@@ -17,9 +17,8 @@ export const GIfExpertApp = () => {
 
       <AddCategory onAddCategory={onAddCategory} />
 
-
       <ul>{categorie.map(cat => (
-        <li key={cat}>{cat} </li>
+        <GifItem key={cat} categorie={cat} />
       ))}</ul>
     </>
   )
