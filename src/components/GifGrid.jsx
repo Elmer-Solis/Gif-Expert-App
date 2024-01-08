@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import { getGifs } from "./helpers/getGifs";
-
+import { GifItem } from "./GifItem";
 export const GifGrid = ({ categorie }) => {
 
     const [images, setImages] = useState([])
 
     const resImagenesApi = async () => {
         const data = await getGifs(categorie);
-        console.log(data);
+        // console.log(data);
         setImages(data)
     }
 
@@ -16,11 +16,15 @@ export const GifGrid = ({ categorie }) => {
     }, [])
 
 
-    return (
-        <div className="card-grid">
-            <h3>{categorie} </h3>
-
-
+    return (<>
+        <h3>{categorie} </h3>
+        <div className="card-grid" >
+            {images.map(datos => (
+                <GifItem key={datos.id} {...datos} />
+            ))
+            }
         </div>
+    </>
+
     )
 }
