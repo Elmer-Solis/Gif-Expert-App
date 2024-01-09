@@ -1,1 +1,1 @@
-# App para buscador Gifs
+# App para buscar Gifs
