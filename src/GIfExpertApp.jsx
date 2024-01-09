@@ -13,7 +13,7 @@ export const GIfExpertApp = () => {
   }
 
   const onClearCategory = (value) => {
-    console.log(value);
+    // console.log(value);
     setCategorie(value);
   }
 
@@ -22,6 +22,7 @@ export const GIfExpertApp = () => {
       <h1>GIfExpertApp</h1>
 
       <AddCategory onAddCategory={onAddCategory} />
+
       <GifButoon onClearCategory={onClearCategory} />
 
       <ul>{categorie.map(cat => (
