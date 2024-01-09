@@ -5,11 +5,7 @@ import { useFetchGifs } from "../hooks/useFetchGifs";
 
 export const GifGrid = ({ categorie }) => {
 
-
     const { images, isLoading } = useFetchGifs(categorie)
-
-
-
 
     return (<>
         <h3>{categorie} </h3>
